@@ -1,0 +1,1 @@
+ocamlc -o bin/Problem$1 Problem$1.ml && mv *.c* bin/
