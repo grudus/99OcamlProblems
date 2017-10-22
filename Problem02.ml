@@ -6,7 +6,7 @@
 - : (string * string) option = None
 *)
 
-let rec last_two list = 
-	if list = [] || List.tl list = [] then None
-	else if List.length list = 2 then Some (List.hd list, List.nth list 1)
-	else last_two (List.tl list) ;;
+let rec last_two = function
+    [] -> None
+  | [h1;h2] -> Some (h1, h2)
+  | _::t -> last_two t ;;
