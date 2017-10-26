@@ -6,9 +6,9 @@
 - : 'a option = None
 *)
 
-let rec last list = 
-	if list = [] then None
-	else if List.tl list = [] then Some (List.hd list)
-	else last (List.tl list) ;;
+let rec last = function 
+	  [] -> None
+	| h::[] -> Some h
+	| _::t -> last t ;;
 
 

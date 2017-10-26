@@ -10,7 +10,7 @@ OCaml standard library has List.length but we ask that you reimplement it. Bonus
 
 
 let length list = 
-	let rec tailLength lst len  = 
-		if (lst = []) then len
-		else tailLength (List.tl lst) (len + 1) in
-	 tailLength list 0;; 
+	let rec tailLength list len  = match list with 
+		  [] -> len
+		| _::t -> tailLength t (len + 1) in
+	tailLength list 0;; 

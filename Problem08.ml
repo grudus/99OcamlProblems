@@ -5,9 +5,9 @@
 *)
 
 let compress list = 
-	let rec contains aux elem =
-		if aux = [] then false
-		else List.hd aux = elem || contains (List.tl aux) elem  in
+	let rec contains aux elem = match aux with
+		  [] -> false
+		| h::t -> h = elem || contains t elem  in
 	let rec comp elemLists uniqueList = 
 		if elemLists = [] then uniqueList
 		else (
