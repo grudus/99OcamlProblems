@@ -5,6 +5,6 @@
 - : string list = ["a"; "a"; "b"; "b"; "c"; "c"; "c"; "c"; "d"; "d"] 
 *)
 
-let rec duplicate list = 
-	if list = [] then []
-	else List.hd list :: List.hd list :: duplicate (List.tl list) ;; 
+let rec duplicate = function 
+	  [] -> []
+	| h::t -> h :: h :: duplicate t ;; 

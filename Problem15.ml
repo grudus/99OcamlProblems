@@ -6,8 +6,9 @@
 *)
 
 let rec replicate list times =
-	let rec repl item count = 
-		if count = 0 then []
-		else item :: repl item (count - 1) in
-	if list = [] then []
-	else repl (List.hd list) times @ replicate (List.tl list) times ;;   
+	let rec repl item count = match count with
+		  0 -> []
+		| i -> item :: repl item (i - 1) in
+	match list with 
+		  [] -> []
+		| h::t -> repl h times @ replicate t times ;;   
